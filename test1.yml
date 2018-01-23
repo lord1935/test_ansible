@@ -27,5 +27,11 @@
         msg: "{{text.stdout}}"
     - name: pwd
       command: pwd
+      register: pwd
+    - debug:
+        msg: "{{pwd.stdout}}"
     - name: ls
       command: ls
+      register: ls
+    - debug:
+        msg: "{{ls.stdout}}"
