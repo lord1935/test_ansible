@@ -15,10 +15,10 @@
       register: DATE
     - name: write to file
       lineinfile:
-        path: "{{playbook_dir}}/qq.txt"
-        line: "{{ DATE }}"
-        insertbefore: BOF
-      #copy: content="{{ DATE }}" dest="{{playbook_dir}}/qq.txt"
+        #path: "{{playbook_dir}}/qq.txt"
+        #line: "{{ DATE.stdout }}"
+        #insertbefore: BOF
+      copy: content="{{ DATE.stdout }}" dest="{{playbook_dir}}/qq.txt"
     - name: read file
       command: cat qq.txt
       register: text
