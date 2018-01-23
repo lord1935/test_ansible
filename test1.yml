@@ -14,7 +14,11 @@
       command: date
       register: DATE
     - name: write to file
-      copy: content="{{ DATE }}" dest="{{playbook_dir}}/qq.txt"
+      lineinfile:
+        path: "{{playbook_dir}}/qq.txt"
+        line: "{{ DATE }}"
+        insertbefore: BOF
+      #copy: content="{{ DATE }}" dest="{{playbook_dir}}/qq.txt"
     - name: read file
       command: cat qq.txt
       register: text
