@@ -20,4 +20,4 @@
       register: text
     - name: print file
       debug:
-        msg: "{{text}}"
+        msg: "{{text.stdout}}"
