@@ -14,7 +14,7 @@
       command: date
       register: DATE
     - name: write to file
-      lineinfile:
+      #lineinfile:
         #path: "{{playbook_dir}}/qq.txt"
         #line: "{{ DATE.stdout }}"
         #insertbefore: BOF
