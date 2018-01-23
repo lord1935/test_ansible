@@ -9,6 +9,11 @@
   hosts: all
   tasks:
     - name: write to file
-      command: sleep 20 && date >> qq.txt
+      command: sleep 20 
+    - name: write to file
+      command: date
+      register: DATE
+    - name: write to file
+      copy: content="{{ DATE }}" dest=qq.txt
     - name: read file
       command: cat qq.txt
