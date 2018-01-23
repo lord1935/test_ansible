@@ -8,9 +8,9 @@
 - name: wr to file
   hosts: all
   tasks:
-    - name: write to file
+    - name: sleep
       command: sleep 20 
-    - name: write to file
+    - name: get date
       command: date
       register: DATE
     - name: write to file
