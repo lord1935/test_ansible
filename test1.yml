@@ -17,3 +17,7 @@
       copy: content="{{ DATE }}" dest="{{playbook_dir}}/qq.txt"
     - name: read file
       command: cat qq.txt
+      register: text
+    - name: print file
+      debug:
+        msg: "{{text}}"
