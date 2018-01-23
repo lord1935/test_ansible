@@ -14,6 +14,6 @@
       command: date
       register: DATE
     - name: write to file
-      copy: content="{{ DATE }}" dest=qq.txt
+      copy: content="{{ DATE }}" dest="{{playbook_dir}}/qq.txt"
     - name: read file
       command: cat qq.txt
